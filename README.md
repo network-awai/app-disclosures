@@ -6,13 +6,15 @@ A consent dialog links to these pages, for example from the `foreign-info-url` o
 
 ## Layout
 
-One folder per app, named by the app's **package id** (the Tauri `identifier`, the same as `id` in the app's `release.json`):
+One folder per app, named by the app's **Android package name**: the `identifier` in the app's `tauri.conf.json`. The Store and the APK signer use the same value. In series apps it usually equals the `id` in `release.json`, but not always (for example, `itonami-market-android` has identifier `network.awai.itonami.market`), so always take it from `tauri.conf.json`.
+
+`scripts/check-folders.mjs` rejects a top-level folder whose name is not a valid Android package name: at least two segments separated by dots; each segment starts with a letter and holds only letters, digits and `_`; no Java keyword as a segment. CI runs it on every pull request.
 
 ```
 <app id>/foreign-info.html   one section per country: #us, #gb, …
 ```
 
-Example: `https://disclosures.awai.network/network.itonami.koukokuscout/foreign-info.html#us`.
+Example: `https://disclosures.awai.network/network.itonami.koukokuscout/foreign-info.html#us` (Koukoku Scout, `tauri.conf.json` identifier `network.itonami.koukokuscout`).
 
 A web-only app with no Tauri app gets an id of the same reverse-domain form, chosen by Itonami, with no hyphen: for example `network.awai.itonami.marketweb` for the Market web app. The app names that id in its descriptor as the id of its disclosure pages.
 
