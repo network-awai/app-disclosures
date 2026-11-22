@@ -14,6 +14,8 @@ One folder per app, named by the app's **package id** (the Tauri `identifier`, t
 
 Example: `https://disclosures.awai.network/network.itonami.koukokuscout/foreign-info.html#us`.
 
+A web-only app with no Tauri app gets an id of the same reverse-domain form, chosen by Itonami, with no hyphen: for example `network.awai.itonami.marketweb` for the Market web app. The app names that id in its descriptor as the id of its disclosure pages.
+
 ## URLs are permanent
 
 Apps ship these URLs inside signed builds and descriptors, so a published URL never changes and is never removed.
