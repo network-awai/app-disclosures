@@ -12,6 +12,7 @@ One folder per app, named by the app's **Android package name**: the `identifier
 
 ```
 <app id>/foreign-info.html   one section per country: #us, #gb, …
+<app id>/sending.html        the public list of external sending (外部送信の公表): recipients, data, purpose, frequency, withdrawal
 ```
 
 Example: `https://disclosures.awai.network/network.itonami.koukokuscout/foreign-info.html#us` (Koukoku Scout, `tauri.conf.json` identifier `network.itonami.koukokuscout`).
