@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Kumade — 外部への送信の公表</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+  <style>body{font:16px/1.7 system-ui,"Noto Sans JP",sans-serif;max-width:60rem;margin:0 auto;padding:24px 20px}h1{font-size:1.5rem}h2{font-size:1.25rem;margin-top:2rem}table{border-collapse:collapse;width:100%}th,td{border:1px solid GrayText;padding:.4rem;text-align:start;vertical-align:top}.hint,.eyebrow{color:GrayText}</style>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">Kumade</p><h1>外部への送信の公表</h1>
+      <p id="audience"><strong>日本の利用者向け</strong>の公表です。</p>
+      <p>Kumade が、利用者の端末から外部へ送る情報と、その送り先です。どの送信も、送る前に確認の画面を出し、利用者が許可したときだけ、その 1 回を送ります。許可は Kumade の 設定 › 許可した送信 から、いつでも取り消せます。取り消す前に送ったものには影響しません。</p>
+      <p><a href="./foreign-info.html">送り先の国の情報</a> · <a href="https://itonami-kumade.pages.dev/">Kumade を開く</a></p>
+    </header>
+
+    <section id="recipients">
+      <h2>送り先</h2>
+      <table>
+        <thead><tr><th>送り先</th><th>国</th><th>送る情報</th><th>目的</th><th>回数</th><th>撤回先</th></tr></thead>
+        <tbody>
+          <tr id="commoncrawl-index"><td>Common Crawl Foundation（<a href="https://commoncrawl.org/privacy-policy">プライバシーポリシー</a>）</td><td><a href="./foreign-info.html#us">アメリカ合衆国</a></td><td>調べる URL、調べる collection の名前、端末の IP アドレス、送信の時刻、ブラウザの種類と版</td><td>指定した URL の過去の保存記録を Common Crawl で調べるため</td><td>1 回ごとに確認（送る前に毎回確認の画面を出し、許可したときだけ、その 1 回を送る）</td><td>Kumade の 設定 › 許可した送信</td></tr>
+          <tr id="commoncrawl-data"><td>Common Crawl Foundation（<a href="https://commoncrawl.org/privacy-policy">プライバシーポリシー</a>）</td><td><a href="./foreign-info.html#us">アメリカ合衆国</a></td><td>取り出す記録の位置（ファイルとバイトの範囲）、端末の IP アドレス、送信の時刻、ブラウザの種類と版</td><td>Common Crawl の保存記録から、指定したページを取り出すため</td><td>1 回ごとに確認（送る前に毎回確認の画面を出し、許可したときだけ、その 1 回を送る）</td><td>Kumade の 設定 › 許可した送信</td></tr>
+          <tr id="huggingface-model"><td>Hugging Face, Inc.（<a href="https://huggingface.co/privacy">プライバシーポリシー</a>）</td><td><a href="./foreign-info.html#us">アメリカ合衆国</a></td><td>取得するモデルのファイルの名前、端末の IP アドレス、送信の時刻、ブラウザの種類と版</td><td>端末内で使う AI モデルを Hugging Face から取得するため</td><td>1 回ごとに確認（送る前に毎回確認の画面を出し、許可したときだけ、その 1 回を送る）</td><td>Kumade の 設定 › 許可した送信</td></tr>
+          <tr id="jsdelivr-runtime"><td>Volentio JSD Limited（<a href="https://www.jsdelivr.com/terms/privacy-policy">プライバシーポリシー</a>）</td><td><a href="./foreign-info.html#gb">英国</a></td><td>取得するファイル（AI モデルを動かす部品の wasm）、端末の IP アドレス、送信の時刻、ブラウザの種類と版</td><td>端末内で AI モデルを動かす部品を jsDelivr から取得するため</td><td>1 回ごとに確認（送る前に毎回確認の画面を出し、許可したときだけ、その 1 回を送る）</td><td>Kumade の 設定 › 許可した送信</td></tr>
+        </tbody>
+      </table>
+      <p class="hint">調べる URL に、病歴などの機微な情報を含めないでください。</p>
+    </section>
+
+    <section id="processors">
+      <h2>配信の委託先</h2>
+      <p>次の事業者は、送り先の配信を受け持ち、端末の IP アドレスが伝わります。Kumade の送り先ではありません。</p>
+      <ul>
+        <li>Amazon Web Services（アメリカ合衆国）: Common Crawl の索引と保存記録、Hugging Face のファイルの配信。Hugging Face の配信は、アメリカ合衆国以外の国の基盤を通ることがあります。</li>
+        <li>Cloudflare・Fastly・Gcore などの CDN（アメリカ合衆国などの会社）: jsDelivr の配信（<a href="https://github.com/jsdelivr/jsdelivr/blob/master/Sub-Processors.md">jsDelivr の委託先</a>）。</li>
+      </ul>
+    </section>
+
+    <section id="not-sending">
+      <h2>いま送っていないもの</h2>
+      <p>URL を指定したページの取得とクロール（capture service）と、Yataverse からのファイルの取得は、送り先の運営者が確定していないため、宣言しておらず、送りません。</p>
+    </section>
+
+    <p class="hint">2026-11-22 時点。</p>
+  </main>
+</body>
+</html>
